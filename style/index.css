@@ -8,12 +8,18 @@
     --bg-color: #f2f2f2;
     --block-color: #fafafa;
     --text-color: #212121;
+    --z-color: #40c463;
+    --s-color: #9be9a8;
+    --x-color: #216e39;
 }
 
 .dark {
     --bg-color: #0a0a0a;
     --block-color: #262827;
     --text-color: #f9f9f9;
+    --z-color: #00602d;
+    --s-color: #003820;
+    --x-color: #27d545;
 }
 
 #app-box {
@@ -33,7 +39,7 @@
     background-color: var(--block-color);
 }
 
-.theme-img{
+.theme-img {
     width: 32px;
     object-fit: cover;
 }
