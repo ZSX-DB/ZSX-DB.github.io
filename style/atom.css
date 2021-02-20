@@ -1,0 +1,12 @@
+.center {
+    display: grid;
+    place-items: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.circle {
+    border-radius: 50%;
+}

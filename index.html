@@ -3,73 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全屏滚动</title>
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .wrapper {
-            overflow: hidden;
-            width: 100vw;
-            height: 100vh;
-        }
-
-        .page {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            font-size: 56px;
-            font-weight: 900;
-            color: #fff;
-            transition: all .4s;
-        }
-
-        .one {
-            background-color: #c94b72;
-        }
-
-        .two {
-            background-color: #cc7832;
-        }
-
-        .three {
-            background-color: #73c991;
-        }
-
-        .four {
-            background-color: #40b6e0;
-        }
-
-    </style>
+    <title>张二三的个人主页</title>
+    <link href="style/index.css" rel="stylesheet">
+    <link href="style/atom.css" rel="stylesheet">
+    <link href="style/head.css" rel="stylesheet">
+    <script src="lib/vue.min.js"></script>
+    <script src="lib/echarts.min.js"></script>
 </head>
 <body>
-<div class="wrapper">
-    <div class="page one">Page1</div>
-    <div class="page two">Page2</div>
-    <div class="page three">Page3</div>
-    <div class="page four">Page4</div>
+
+<div id="app">
+
+    <div id="app-box" :class="{'light': !isDark, 'dark': isDark}">
+
+        <div class="theme-box center circle pointer" @click="isDark = !isDark">
+            <img src="image/sun.svg"
+                 alt="sun"
+                 class="theme-img"
+                 v-if="isDark">
+            <img src="image/moon.svg"
+                 alt="moon"
+                 class="theme-img"
+                 v-else>
+        </div>
+
+        <div class="block-box">
+
+            <header class="zsx">
+
+            </header>
+
+            <div id="skill-chart" class="block-item"></div>
+            <div class="block-item"></div>
+            <div class="block-item"></div>
+
+        </div>
+    </div>
 </div>
 
 <script>
-    // 适用于除了firefox以外的pc端浏览器
-    let count = 0
-    // 通过更改第一个内部的div的margin-top来使得全部div移动
-    document.body.onmousewheel = event => {
-        // 通过event.wheelDelta判断滚动方向，为正向上滚动，为负向下滚动
-        if (event.wheelDelta > 0 && count > 0) {
-            count--
-        } else if (event.wheelDelta < 0 && count < 3) {
-            // 上面的3是内部div的数量减去1
-            count++
+
+    const localStore = {
+        data() {
+            return {
+                isDark: false
+            }
+        },
+        mounted() {
+            this.setSkillChart()
+        },
+        methods: {
+            setSkillChart() {
+                const skillChart = echarts.init(document.querySelector('#skill-chart'))
+
+                const skillOption = {
+                    title: {
+                        text: '前端框架',
+                        textStyle: {
+                            fontSize: 27
+                        }
+                    },
+                    series: [
+                        {
+                            type: 'pie',
+                            radius: [30, 150],
+                            center: ['50%', '50%'],
+                            roseType: 'area',
+                            itemStyle: {
+                                borderRadius: 8
+                            },
+                            data: [
+                                {value: 30, name: 'Vue'},
+                                {value: 25, name: 'React'},
+                                {value: 20, name: 'jQuery'},
+                            ]
+                        }
+                    ]
+
+                }
+
+                skillChart.setOption(skillOption)
+            }
+
         }
-        const {style, clientHeight} = document.querySelector('.one')
-        style.marginTop = `-${count * clientHeight}px`
     }
+
+    Vue.createApp(localStore).mount('#app')
 
 </script>
 
