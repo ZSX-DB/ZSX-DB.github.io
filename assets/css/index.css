@@ -54,8 +54,7 @@ body .info-unit h3 {
 }
 
 .container .side .me .portrait {
-    margin: 0 auto;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
     width: 8rem;
     height: 8rem;
     overflow: hidden;

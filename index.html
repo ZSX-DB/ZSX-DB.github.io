@@ -28,7 +28,6 @@
 <article class="container">
     <section class="side" id="side">
 
-        <!-- 个人肖像 -->
         <section class="me">
             <img class="avatar" src="assets/images/avatar.jpg" alt="avatar" style="width: 128px">
 
@@ -37,7 +36,6 @@
 
         </section>
 
-        <!-- 基本信息 -->
         <section class="profile info-unit">
             <h2>
                 <i class="fa fa-user" aria-hidden="true"></i>基本信息</h2>
@@ -58,7 +56,6 @@
             </ul>
         </section>
 
-        <!-- 联系方式 -->
         <section class="contact info-unit">
             <h2>
                 <i class="fa fa-phone" aria-hidden="true"></i>联系方式</h2>
@@ -83,11 +80,20 @@
             <h2><i class="fa fa-qrcode" aria-hidden="true"></i>二维码</h2>
             <hr/>
         </section>
+
+        <section class="work info-unit">
+            <h2>
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                自我评价
+            </h2>
+            <hr/>
+            <p>热爱技术，真诚待人，富有原则</p>
+        </section>
+
     </section>
 
     <section class="main">
 
-        <!-- 技能点 -->
         <section class="skill info-unit">
             <h2>
                 <i class="fa fa-code" aria-hidden="true"></i>技能点</h2>
@@ -115,7 +121,7 @@
                     <h2>JavaScript</h2>
                     <ul class="info-content">
                         <li>熟练使用es6语法</li>
-                        <li>Vue有丰富的项目经验，使用过vue全家桶，React同样有实际开发经验，搭配的是Mobx和react-router-dom</li>
+                        <li>Vue有丰富的项目经验，React同样有实际开发经验</li>
                         <li>分别使用过原生和uniapp开发过小程序</li>
                         <li>能够使用Node.js进行后台服务的开发，也会使用node来简化重复工作</li>
                     </ul>
@@ -147,7 +153,6 @@
             </ul>
         </section>
 
-        <!-- 工作经历 -->
         <section class="work info-unit">
             <h2>
                 <i class="fa fa-shopping-bag" aria-hidden="true"></i>工作经历</h2>
@@ -158,49 +163,58 @@
                         <span>希睿数字有限公司</span>
                         <time>2020.12 - Now</time>
                     </h2>
-                    <p>数据</p>
+                    <p>参与的是工业项目，因此需求是比较复杂的，包含以下</p>
                     <ul class="info-content">
-                        <li>深度参与XX项目迭代XX的前端开发工作，独立承担并完成XX、XX、XXXX等功能点的开发，主要维护并修复XX、XX、XX等功能点bug若干。项目采用技术栈
-                            <mark>React+React Router+Node.js+SASS</mark>
-                            ，实现
-                            <mark>前后端完全分离</mark>
-                            。
+                        <li>
+                            联通基于 websocket 的mqtt协议，实现 3D 模型 与现实的机器虚实同步
                         </li>
-                        <li>配合UI和后端，根据产品需求提供H5页面嵌入到后台模板，要求
-                            <mark>移动端显示正常</mark>
-                            。
+                        <li>
+                            纯 web 端实现扫码操作
                         </li>
-                        <li>主要参与XXXXXXX的静态页面开发工作，要求
-                            <mark>在支付宝环境下完全兼容</mark>
-                            。
+                        <li>
+                            利用 canvas 实现签名操作
                         </li>
                     </ul>
                 </li>
                 <li>
                     <h2>
-                        <span>珠海方诺信息有限公司（实习）</span>
+                        <span>珠海方诺信息有限公司</span>
                         <time>2019.6-2020.12</time>
                     </h2>
                     <ul class="info-content">
-                        <li>深度参与公司主线产品「XXXX」的前端开发工作，完成帖子快捷回复、
-                            <mark>全站图片懒加载</mark>
-                            、活动banner、帖子管理（使用Yii框架）等功能。项目采用技术栈phpWind+NAMP。
-                            <a href="http://itsay.tech/162/" target="_blank">
-                                <i class="fa fa-link" aria-hidden="true"></i>博客文章</a>。
+                        <li>
+                            小程序使用过原生和 uniapp 进行过开发，完整实践了登录权限的获取，微信支付，小程序发布等一系列流程
                         </li>
                         <li>
-                            公司app内嵌
-                        </li>
-                        <li>
+                            saas后台系统的开发，基于
+                            <mark>vue-element-admin</mark>
+                            业务框架开发
                             <p>
-                                - saas后台系统的开发，采用了
-                                <mark>vue-element-admin</mark>
-                                业务框架，使用过vue全家桶，sass, echarts等
+                                - 使用过vue全家桶，sass, echarts等
                             </p>
                             <p>
                                 - 在开发过程发现大部分页面都比较相似，即上表单下表格的结构，因此实现了根据对象结构自动匹配页面，无需创建页面，简化了流程
                             </p>
-                            <p>封装了一些通用组件，如根据</p>
+                            <p>
+                                - 封装了一些通用组件，如
+                                基于循环链表的循环展示信息大屏组件（无需操作索引），
+                                可放大至全屏的dialog（方便查看复杂表单），
+                                可无限子级递归的表格，
+                                根据屏幕和状态自适应的步骤条等
+                            </p>
+                            <p>
+                                - 解决项目遗留的bug，会使用 debugger 定位错误，trace追踪等一系列技巧
+                            </p>
+                        </li>
+                        <li>
+                            公司app内嵌h5的开发，在开发中也认识到了移动端浏览器的特性 ，如touch事件，点击穿透，300ms延迟等。
+                            由于项目生命周期短，规模小，在保证测试通过的情况下，可以尝试不同的技术。包括以下
+                            <p>
+                                - vue3 搭配 typescript, vant，使用 composition api
+                            </p>
+                            <p>
+                                - react 搭配 Mobx 和 react-router-dom ，均使用 hook api
+                            </p>
                         </li>
                         <li>活动页面的开发（节日日历、抽奖轮盘等效果）</li>
                         <li>jQuery旧官网的维护</li>
@@ -209,12 +223,6 @@
             </ul>
         </section>
 
-        <section class="work info-unit">
-            <h2>
-                <i class="fa fa-pencil" aria-hidden="true"></i>自我评价</h2>
-            <hr/>
-            <p>热爱技术，真诚待人，富有原则</p>
-        </section>
     </section>
 </article>
 
